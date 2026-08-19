@@ -1,0 +1,1171 @@
+[
+ {
+  "nombre": "Idealle",
+  "desc": "Amaderado Vainilla",
+  "cat": "Perfumes unisex",
+  "sub": "Creación propia",
+  "img": "img/idealle.webp",
+  "pag": 4
+ },
+ {
+  "nombre": "Passion Intense",
+  "desc": "Afrutado",
+  "cat": "Perfumes unisex",
+  "sub": "Creación propia",
+  "img": "img/passion-intense.webp",
+  "pag": 5
+ },
+ {
+  "nombre": "Addiction",
+  "desc": "Inspirada en Lattafa Emeer",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-addiction.webp",
+  "pag": 6
+ },
+ {
+  "nombre": "Cheval",
+  "desc": "Inspirada en Montale arabians tonka",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-cheval.webp",
+  "pag": 6
+ },
+ {
+  "nombre": "Cosmos",
+  "desc": "Inspirada en Lattafa Art of universe",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-cosmos.webp",
+  "pag": 6
+ },
+ {
+  "nombre": "Cazzi",
+  "desc": "Inspirada en Cassiopea Tiziana T.",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-cazzi.webp",
+  "pag": 6
+ },
+ {
+  "nombre": "Cioccolate",
+  "desc": "Inspirada en Bianco Latte Giordini.",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-cioccolate.webp",
+  "pag": 6
+ },
+ {
+  "nombre": "Crimson Elixir",
+  "desc": "Inspirada en Hibiscus Mahajad",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-crimson-elixir.webp",
+  "pag": 6
+ },
+ {
+  "nombre": "Dukhan",
+  "desc": "Inspirada en Le Labo Santal 33",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-dukhan.webp",
+  "pag": 7
+ },
+ {
+  "nombre": "Femme",
+  "desc": "Inspirada en Ilmin Il Femme",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-femme.webp",
+  "pag": 7
+ },
+ {
+  "nombre": "Galax",
+  "desc": "Inspirada en Andromeda Tiziana Terenzi",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-galax.webp",
+  "pag": 7
+ },
+ {
+  "nombre": "Etoile",
+  "desc": "Inspirada en Montale Starry Nigths",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-etoile.webp",
+  "pag": 7
+ },
+ {
+  "nombre": "Fruto Silvestre",
+  "desc": "Inspirada en Mancera Wild Fruit",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-fruto-silvestre.webp",
+  "pag": 7
+ },
+ {
+  "nombre": "Gedeon",
+  "desc": "Inspirada en Lattafa Oud For glory",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-gedeon.webp",
+  "pag": 7
+ },
+ {
+  "nombre": "Gold Dust",
+  "desc": "Inspirada en Vainilla Powder Matier Premiere",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-gold-dust.webp",
+  "pag": 8
+ },
+ {
+  "nombre": "Honor",
+  "desc": "Inspirada en Lattafa Honor and glory",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-honor.webp",
+  "pag": 8
+ },
+ {
+  "nombre": "Khaneli",
+  "desc": "Inspirada en Lattafa Khamrah",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-khaneli.webp",
+  "pag": 8
+ },
+ {
+  "nombre": "Heaven",
+  "desc": "Inspirada en Louis Vuitton Imagination",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-heaven.webp",
+  "pag": 8
+ },
+ {
+  "nombre": "Kafic",
+  "desc": "Inspirada en Montale Intense Cafe",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-kafic.webp",
+  "pag": 8
+ },
+ {
+  "nombre": "Khora",
+  "desc": "Inspirada en Xerjoff Naxos",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-khora.webp",
+  "pag": 8
+ },
+ {
+  "nombre": "King",
+  "desc": "Inspirada en Xerjoff Erba Pura",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-king.webp",
+  "pag": 9
+ },
+ {
+  "nombre": "Legacy",
+  "desc": "Inspirada en Ahli Pegasus",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-legacy.webp",
+  "pag": 9
+ },
+ {
+  "nombre": "Litmus",
+  "desc": "Inspirada en Moschino Toy pearl",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-litmus.webp",
+  "pag": 9
+ },
+ {
+  "nombre": "Kirkja",
+  "desc": "Inspirada en Tiziana Terenzi kirke",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-kirkja.webp",
+  "pag": 9
+ },
+ {
+  "nombre": "Legado",
+  "desc": "Inspirada en Emir Korbaj",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-legado.webp",
+  "pag": 9
+ },
+ {
+  "nombre": "Luxo",
+  "desc": "Inspirada en Mancera Instant Crush",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-luxo.webp",
+  "pag": 9
+ },
+ {
+  "nombre": "Lychee",
+  "desc": "IInspirada en Lattafa Sublime",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-lychee.webp",
+  "pag": 10
+ },
+ {
+  "nombre": "Nubit",
+  "desc": "Inspirada en Kajal Lamar",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-nubit.webp",
+  "pag": 10
+ },
+ {
+  "nombre": "Opulencia",
+  "desc": "Inspirada en Drako Tiziana T.",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-opulencia.webp",
+  "pag": 10
+ },
+ {
+  "nombre": "Magnus",
+  "desc": "Inspirada en Bond 9 Blecker Street",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-magnus.webp",
+  "pag": 10
+ },
+ {
+  "nombre": "One Fresh",
+  "desc": "Inspirada en CK ONE",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-one-fresh.webp",
+  "pag": 10
+ },
+ {
+  "nombre": "Origen",
+  "desc": "Inspirada en Afnan 9pm Rebel",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-origen.webp",
+  "pag": 10
+ },
+ {
+  "nombre": "Orion",
+  "desc": "Inspirada en Orza Tiziana T",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-orion.webp",
+  "pag": 11
+ },
+ {
+  "nombre": "Purple",
+  "desc": "Inspirada en Lattafa Amethyste",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-purple.webp",
+  "pag": 11
+ },
+ {
+  "nombre": "Rush",
+  "desc": "Inspirada en Bacarat Rouge 540",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-rush.webp",
+  "pag": 11
+ },
+ {
+  "nombre": "Passion",
+  "desc": "Inspirada en Ahli Vega",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-passion.webp",
+  "pag": 11
+ },
+ {
+  "nombre": "Raom",
+  "desc": "Inspirada en Lattafa Ajwad pink to pink",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-raom.webp",
+  "pag": 11
+ },
+ {
+  "nombre": "Sadje",
+  "desc": "Inspirada en Ajwad Lattafa",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-sadje.webp",
+  "pag": 11
+ },
+ {
+  "nombre": "Sparkling",
+  "desc": "Inspirada en Ahli Karpos",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-sparkling.webp",
+  "pag": 12
+ },
+ {
+  "nombre": "Summer Intense",
+  "desc": "Inspirada en Lorenzo Pazzaglia Summer Hammer",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-summer-intense.webp",
+  "pag": 12
+ },
+ {
+  "nombre": "White Star",
+  "desc": "Inspirada en Bond 9 TriBeCa",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-white-star.webp",
+  "pag": 12
+ },
+ {
+  "nombre": "Star",
+  "desc": "Inspirada en Bond 9 Signature",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-star.webp",
+  "pag": 12
+ },
+ {
+  "nombre": "Universel",
+  "desc": "Inspirada en Cartier Eau Concentre",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-universel.webp",
+  "pag": 12
+ },
+ {
+  "nombre": "Yuzu",
+  "desc": "Inspirada en Armaf Mandarin Sky",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-yuzu.webp",
+  "pag": 12
+ },
+ {
+  "nombre": "Jade Imperialle",
+  "desc": "Inspirada en Jade Korbaj",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-jade-imperialle.webp",
+  "pag": 13
+ },
+ {
+  "nombre": "Costiera Solar",
+  "desc": "Inspirada en Aqua di parma Mirto di panarea",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-costiera-solar.webp",
+  "pag": 13
+ },
+ {
+  "nombre": "Costiera",
+  "desc": "Inspirada en Aqua di parma Fico di amalfi",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-costiera.webp",
+  "pag": 13
+ },
+ {
+  "nombre": "Urban Legend",
+  "desc": "Ryan Castro Ghetto",
+  "cat": "Perfumes unisex",
+  "sub": "",
+  "img": "img/perfumes-unisex-urban-legend.webp",
+  "pag": 13
+ },
+ {
+  "nombre": "afrodita",
+  "desc": "Inspirada en Orientica velvet gold",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-afrodita.webp",
+  "pag": 14
+ },
+ {
+  "nombre": "Beautiful Girl",
+  "desc": "Inspirado en Miss Dior EDP",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-beautiful-girl.webp",
+  "pag": 14
+ },
+ {
+  "nombre": "Bouquete",
+  "desc": "Inspirada Miss Dior blooming B.",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-bouquete.webp",
+  "pag": 14
+ },
+ {
+  "nombre": "Aura",
+  "desc": "Inspirado en Ralph Lauren",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-aura.webp",
+  "pag": 14
+ },
+ {
+  "nombre": "Bellisima",
+  "desc": "Inspirado en Lancome La vie est belle elixir",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-bellisima.webp",
+  "pag": 14
+ },
+ {
+  "nombre": "Candied Lemond",
+  "desc": "Inspirada en Devotion D&G",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-candied-lemond.webp",
+  "pag": 14
+ },
+ {
+  "nombre": "Cataleya",
+  "desc": "Inspirada en Angel Nova mugler",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-cataleya.webp",
+  "pag": 15
+ },
+ {
+  "nombre": "Dania",
+  "desc": "Inspirada en YARA by lattafa",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-dania.webp",
+  "pag": 15
+ },
+ {
+  "nombre": "Dania Tous",
+  "desc": "Inspirada en YARA TOUS by lattafa",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-dania-tous.webp",
+  "pag": 15
+ },
+ {
+  "nombre": "Coqueiro",
+  "desc": "Inspirado en Thank u next Ariana G.",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-coqueiro.webp",
+  "pag": 15
+ },
+ {
+  "nombre": "Dania Doux",
+  "desc": "Inspirada en Yara candy by lattafa",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-dania-doux.webp",
+  "pag": 15
+ },
+ {
+  "nombre": "Diamond",
+  "desc": "Inspirado en Bulgari Omnia cristalline",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-diamond.webp",
+  "pag": 15
+ },
+ {
+  "nombre": "Diva",
+  "desc": "Inspirada en Bulgaria Omnia Coral",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-diva.webp",
+  "pag": 16
+ },
+ {
+  "nombre": "Dolce Estate",
+  "desc": "Inspirada en Chairosa 62",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-dolce-estate.webp",
+  "pag": 16
+ },
+ {
+  "nombre": "Edén",
+  "desc": "Inspirada en Love dont be Sky by Killian",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-eden.webp",
+  "pag": 16
+ },
+ {
+  "nombre": "Dolce Caramella",
+  "desc": "Inspirada en Chairosa 71",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-dolce-caramella.webp",
+  "pag": 16
+ },
+ {
+  "nombre": "Dolce Orchidea",
+  "desc": "Inspirada en cheirosa 40",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-dolce-orchidea.webp",
+  "pag": 16
+ },
+ {
+  "nombre": "Exclusif",
+  "desc": "Inspirada en Fame de Paco Rabanne",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-exclusif.webp",
+  "pag": 16
+ },
+ {
+  "nombre": "Exquisité",
+  "desc": "Inspirado en Dahab de Kajal",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-exquisite.webp",
+  "pag": 17
+ },
+ {
+  "nombre": "Fresh Spring",
+  "desc": "Inspirada en Chance Chanel fraiche",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-fresh-spring.webp",
+  "pag": 17
+ },
+ {
+  "nombre": "Incanto",
+  "desc": "Inspirada en Ch de Carolina Herrera",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-incanto.webp",
+  "pag": 17
+ },
+ {
+  "nombre": "Floral Bomb",
+  "desc": "Inspirada en Flower Bomb V&R",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-floral-bomb.webp",
+  "pag": 17
+ },
+ {
+  "nombre": "Goddes",
+  "desc": "Inspirada en Versace Eros Edp",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-goddes.webp",
+  "pag": 17
+ },
+ {
+  "nombre": "Innocence",
+  "desc": "Inspirada en Cry Baby Melani Martinez",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-innocence.webp",
+  "pag": 17
+ },
+ {
+  "nombre": "La vie en Ville",
+  "desc": "white tea elizabeth arden",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-la-vie-en-ville.webp",
+  "pag": 18
+ },
+ {
+  "nombre": "Lovely Red",
+  "desc": "inspirada en Yum Boujee Marshmallow",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-lovely-red.webp",
+  "pag": 18
+ },
+ {
+  "nombre": "Majestic",
+  "desc": "Inspirado en idole lancome",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-majestic.webp",
+  "pag": 18
+ },
+ {
+  "nombre": "Le fruit",
+  "desc": "Inspirada en Armaf yum yum",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-le-fruit.webp",
+  "pag": 18
+ },
+ {
+  "nombre": "Magnetia",
+  "desc": "Inspirado en La Bomba Carolina Herrera",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-magnetia.webp",
+  "pag": 18
+ },
+ {
+  "nombre": "Marry Me",
+  "desc": "Inspirada en The Wedding Silk Santal Kayali",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-marry-me.webp",
+  "pag": 18
+ },
+ {
+  "nombre": "Neige Vainilla",
+  "desc": "Inspirada en Her confession Lattafa",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-neige-vainilla.webp",
+  "pag": 19
+ },
+ {
+  "nombre": "Passaro",
+  "desc": "Inspirada en Pineapple D&G",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-passaro.webp",
+  "pag": 19
+ },
+ {
+  "nombre": "Pilvi Rose",
+  "desc": "Inspirado en cloud pink ariana grande",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-pilvi-rose.webp",
+  "pag": 19
+ },
+ {
+  "nombre": "Oud Rose",
+  "desc": "Inspirada en Guidance by Amouge",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-oud-rose.webp",
+  "pag": 19
+ },
+ {
+  "nombre": "Pilvi",
+  "desc": "Inspirado en cloud ariana grande",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-pilvi.webp",
+  "pag": 19
+ },
+ {
+  "nombre": "Pink Kiss",
+  "desc": "Inspirada en Bond 9 Nolita",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-pink-kiss.webp",
+  "pag": 19
+ },
+ {
+  "nombre": "Pink Woman",
+  "desc": "Inspirado en 212 vip rose elixir",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-pink-woman.webp",
+  "pag": 20
+ },
+ {
+  "nombre": "Precious",
+  "desc": "Inspirada en JPG DIVINE",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-precious.webp",
+  "pag": 20
+ },
+ {
+  "nombre": "Rose",
+  "desc": "Inspirada en Parfum de Marly Delina",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-rose.webp",
+  "pag": 20
+ },
+ {
+  "nombre": "Plenitud",
+  "desc": "Inspirada en Lancome La Vie Est Belle",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-plenitud.webp",
+  "pag": 20
+ },
+ {
+  "nombre": "Romantique",
+  "desc": "Inspirada en lattafa noble blush",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-romantique.webp",
+  "pag": 20
+ },
+ {
+  "nombre": "Santorini",
+  "desc": "Inspirada en Ligth Blue Capri in Love D&G",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-santorini.webp",
+  "pag": 20
+ },
+ {
+  "nombre": "Sexy Girl",
+  "desc": "Inspirada en Good Girl Blush",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-sexy-girl.webp",
+  "pag": 21
+ },
+ {
+  "nombre": "Sophistiqué",
+  "desc": "Inspirada en Burberry her",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-sophistique.webp",
+  "pag": 21
+ },
+ {
+  "nombre": "Suklaa",
+  "desc": "Inspirada en Good Girl Carolina H",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-suklaa.webp",
+  "pag": 21
+ },
+ {
+  "nombre": "Soberana",
+  "desc": "Inspirada en YSL Libre EDP",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-soberana.webp",
+  "pag": 21
+ },
+ {
+  "nombre": "Sugar Peach",
+  "desc": "Inspirada en Tabit tiziana terenzi",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-sugar-peach.webp",
+  "pag": 21
+ },
+ {
+  "nombre": "Summer Lady",
+  "desc": "Inspirada en D&G L´emperatrice",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-summer-lady.webp",
+  "pag": 21
+ },
+ {
+  "nombre": "Sunny Sky",
+  "desc": "Inspirada en Armaf Island Bliss",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-sunny-sky.webp",
+  "pag": 22
+ },
+ {
+  "nombre": "Tuki",
+  "desc": "Inspirada en Afeef Lattafa",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-tuki.webp",
+  "pag": 22
+ },
+ {
+  "nombre": "Vanilla Rum",
+  "desc": "Inspirada en Vanilla Royale Sugared Patchouli Kayali",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-vanilla-rum.webp",
+  "pag": 22
+ },
+ {
+  "nombre": "Sweet Pistacho",
+  "desc": "Inspirada en Kayali Yum pistachio gelato",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-sweet-pistacho.webp",
+  "pag": 22
+ },
+ {
+  "nombre": "Vainilla Royal",
+  "desc": "Inspirada en bdk Impadia",
+  "cat": "Perfumes femeninos",
+  "sub": "",
+  "img": "img/perfumes-femeninos-vainilla-royal.webp",
+  "pag": 22
+ },
+ {
+  "nombre": "Alpha",
+  "desc": "Inspirada en Dior homme intense",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-alpha.webp",
+  "pag": 23
+ },
+ {
+  "nombre": "Aquila",
+  "desc": "Inspirada en Parfum de Marly Altahir",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-aquila.webp",
+  "pag": 23
+ },
+ {
+  "nombre": "Boise",
+  "desc": "Inspirada en Versace altelier Santal Boise",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-boise.webp",
+  "pag": 23
+ },
+ {
+  "nombre": "Aqua Fresh",
+  "desc": "Inspirada en Aqua de Gio",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-aqua-fresh.webp",
+  "pag": 23
+ },
+ {
+  "nombre": "Beast",
+  "desc": "Inspirada en Creed Aventus",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-beast.webp",
+  "pag": 23
+ },
+ {
+  "nombre": "Cavalo",
+  "desc": "Inspirada en Parfum de Marly Pegasus",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-cavalo.webp",
+  "pag": 23
+ },
+ {
+  "nombre": "Charming",
+  "desc": "Inspirada en Jean Paul G. Le beau parfum",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-charming.webp",
+  "pag": 24
+ },
+ {
+  "nombre": "Citrus King",
+  "desc": "IInspirada en K D&G EDP",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-citrus-king.webp",
+  "pag": 24
+ },
+ {
+  "nombre": "Elisium",
+  "desc": "Inspirada en Dior Sauvage elixir",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-elisium.webp",
+  "pag": 24
+ },
+ {
+  "nombre": "Choklad",
+  "desc": "Inspirada en Bad Boy Dazzling Garden",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-choklad.webp",
+  "pag": 24
+ },
+ {
+  "nombre": "Eclipse",
+  "desc": "Inspirada en Louis Vuitton Ombre Nomade",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-eclipse.webp",
+  "pag": 24
+ },
+ {
+  "nombre": "Elisum Intense",
+  "desc": "Inspirada en Hugo boss bottle elixir",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-elisum-intense.webp",
+  "pag": 24
+ },
+ {
+  "nombre": "Elixir",
+  "desc": "Inspirada en 1 Million elixir PR",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-elixir.webp",
+  "pag": 25
+ },
+ {
+  "nombre": "Gentleman",
+  "desc": "InInspirada en Moncler homme",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-gentleman.webp",
+  "pag": 25
+ },
+ {
+  "nombre": "Khalil",
+  "desc": "Inspirada en Parfum de marly Leyton",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-khalil.webp",
+  "pag": 25
+ },
+ {
+  "nombre": "Fresh Vibration",
+  "desc": "Inspirada en Creed Vetiver",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-fresh-vibration.webp",
+  "pag": 25
+ },
+ {
+  "nombre": "Herós",
+  "desc": "Inspirado en Prada Luna Rosa Carbon",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-heros.webp",
+  "pag": 25
+ },
+ {
+  "nombre": "Male Wood",
+  "desc": "Inspirada en Burberry Hero edp",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-male-wood.webp",
+  "pag": 25
+ },
+ {
+  "nombre": "Noble Elixir",
+  "desc": "Inspirada en Armaf Titan Rouge",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-noble-elixir.webp",
+  "pag": 26
+ },
+ {
+  "nombre": "Signore",
+  "desc": "Inspirada en Louis Vuitton Linmensite",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-signore.webp",
+  "pag": 26
+ },
+ {
+  "nombre": "Skote",
+  "desc": "Inspirada en Jean Paul Gaultier Elixir",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-skote.webp",
+  "pag": 26
+ },
+ {
+  "nombre": "Rasha",
+  "desc": "Inspirada en Hawas Rasasi",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-rasha.webp",
+  "pag": 26
+ },
+ {
+  "nombre": "Sillage",
+  "desc": "Inspirada en Creed silver mountain Water",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-sillage.webp",
+  "pag": 26
+ },
+ {
+  "nombre": "The Secret",
+  "desc": "Inspirada en Bond 9 Lafayette Street",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-the-secret.webp",
+  "pag": 26
+ },
+ {
+  "nombre": "Uomo",
+  "desc": "Inspirada en Valentino Uomo",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-uomo.webp",
+  "pag": 27
+ },
+ {
+  "nombre": "Uomo Melancolia",
+  "desc": "Inspirada en Uomo Born in Roma melancolia",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-uomo-melancolia.webp",
+  "pag": 27
+ },
+ {
+  "nombre": "Verz",
+  "desc": "Inspirada en Versace Eros edp",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-verz.webp",
+  "pag": 27
+ },
+ {
+  "nombre": "Uomo Intense",
+  "desc": "Inspirada en Valentino Uomo intense",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-uomo-intense.webp",
+  "pag": 27
+ },
+ {
+  "nombre": "Verz Plus",
+  "desc": "Inspirada en Versace Eros Energy",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-verz-plus.webp",
+  "pag": 27
+ },
+ {
+  "nombre": "You",
+  "desc": "Inspirada en Stronger With You OUD",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-you.webp",
+  "pag": 27
+ },
+ {
+  "nombre": "You Intense",
+  "desc": "Inspirada en Stronger With You",
+  "cat": "Perfumes masculinos",
+  "sub": "",
+  "img": "img/perfumes-masculinos-you-intense.webp",
+  "pag": 28
+ },
+ {
+  "nombre": "Sparkling",
+  "desc": "Aroma frutal fresco, nota principal de mango",
+  "cat": "Cremas y splash",
+  "sub": "Cremas",
+  "genero": "unisex",
+  "img": "img/cremas-y-splash-cremas-sparkling.webp",
+  "pag": 29
+ },
+ {
+  "nombre": "Charming",
+  "desc": "Aroma fresco frutal, con notas tropicales",
+  "cat": "Cremas y splash",
+  "sub": "Cremas",
+  "genero": "",
+  "img": "img/cremas-y-splash-cremas-charming.webp",
+  "pag": 29
+ },
+ {
+  "nombre": "Dolce Estate",
+  "desc": "Aroma dulce, notas de vainilla y pistacho",
+  "cat": "Cremas y splash",
+  "sub": "Cremas",
+  "genero": "femenino",
+  "img": "img/cremas-y-splash-cremas-dolce-estate.webp",
+  "pag": 29
+ },
+ {
+  "nombre": "Sparkling",
+  "desc": "Aroma frutal fresco, nota principal de mango",
+  "cat": "Cremas y splash",
+  "sub": "Splash",
+  "genero": "unisex",
+  "img": "img/cremas-y-splash-splash-sparkling.webp",
+  "pag": 30
+ },
+ {
+  "nombre": "Charming",
+  "desc": "Aroma fresco frutal, con notas tropicales",
+  "cat": "Cremas y splash",
+  "sub": "Splash",
+  "genero": "",
+  "img": "img/cremas-y-splash-splash-charming.webp",
+  "pag": 30
+ },
+ {
+  "nombre": "Dolce Estate",
+  "desc": "Aroma dulce, notas de vainilla y pistacho",
+  "cat": "Cremas y splash",
+  "sub": "Splash",
+  "genero": "femenino",
+  "img": "img/cremas-y-splash-splash-dolce-estate.webp",
+  "pag": 30
+ },
+ {
+  "nombre": "Sparkling",
+  "desc": "Aroma frutal fresco, nota principal de mango",
+  "cat": "Descuentos o sets especiales",
+  "sub": "Duo crema y splash",
+  "genero": "unisex",
+  "img": "img/descuentos-o-sets-especiales-duo-crema-y-splash-sparkling.webp",
+  "pag": 33
+ },
+ {
+  "nombre": "Charming",
+  "desc": "Aroma fresco frutal, con notas tropicales",
+  "cat": "Descuentos o sets especiales",
+  "sub": "Duo crema y splash",
+  "genero": "",
+  "img": "img/descuentos-o-sets-especiales-duo-crema-y-splash-charming.webp",
+  "pag": 33
+ },
+ {
+  "nombre": "Dolce Estate",
+  "desc": "Aroma dulce, notas de vainilla y pistacho",
+  "cat": "Descuentos o sets especiales",
+  "sub": "Duo crema y splash",
+  "genero": "femenino",
+  "img": "img/descuentos-o-sets-especiales-duo-crema-y-splash-dolce-estate.webp",
+  "pag": 33
+ },
+ {
+  "nombre": "Set de descubrimiento",
+  "cat": "Set de descubrimiento",
+  "sub": "",
+  "desc": "Experimenta con nuestro set decants x5 unidades y disfruta de una amplia variedad de perfumes en tamaño x10ml en rollón. Elige tus 5 referencias diferentes y escríbenos para darnos tu selección.",
+  "pag": 31,
+  "img": "img/set-de-descubrimiento.webp"
+ },
+ {
+  "nombre": "Béné kids",
+  "cat": "Béné kids - Línea infantil",
+  "sub": "",
+  "desc": "Perfume x50ml + muñeco llavero. Niña, Niño y Bebé. Pide mas diseños de muñecos.",
+  "pag": 32,
+  "img": "img/bene-kids.webp"
+ },
+ {
+  "nombre": "Set de regalo",
+  "cat": "Descuentos o sets especiales",
+  "sub": "",
+  "desc": "Perfume x30ml, Crema x120ml, Splash x140ml. 3 Aromas diferentes.",
+  "pag": 34,
+  "img": "img/set-de-regalo.webp"
+ },
+ {
+  "nombre": "Lleva las 3",
+  "cat": "Descuentos o sets especiales",
+  "sub": "",
+  "desc": "Precio normal $135,000. Lleva las 3 x $110,000. Precio disponible solo para las referencias seleccionadas.",
+  "pag": 35,
+  "img": "img/lleva-las-3.webp"
+ }
+]

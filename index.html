@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bénédiction · Catálogo de perfumes</title>
+<meta name="description" content="Catálogo Bénédiction: perfumes unisex, femeninos y masculinos, cremas, splash, sets y línea infantil Béné kids.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="saltar" href="#rejilla">Saltar al catálogo</a>
+
+<header class="marca">
+  <div class="marca__id">
+    <span class="marca__nombre">BÉNÉ</span>
+    <span class="marca__sub">BÉNÉDICTION</span>
+  </div>
+  <p class="marca__lema">Catálogo</p>
+</header>
+
+<section class="portada">
+  <div class="portada__texto">
+    <h1>Perfumes Bénédiction</h1>
+    <p class="portada__bajada">Perfumería inspirada y creación propia. Cada referencia en <b>30 ml</b> y <b>100 ml</b>, más cremas, splash y sets.</p>
+    <p class="portada__precio" id="portadaPrecio"></p>
+  </div>
+  <figure class="portada__foto">
+    <img src="img/idealle.webp" alt="Frasco Bénédiction Idealle de 30 ml" width="340" height="340" fetchpriority="high">
+  </figure>
+</section>
+
+<div class="barra" role="search">
+  <div class="barra__inner">
+    <label class="campo">
+      <span class="campo__et">Buscar</span>
+      <input id="q" type="search" placeholder="Nombre o inspiración" autocomplete="off" spellcheck="false">
+    </label>
+    <div class="filtros">
+      <fieldset class="grupo">
+        <legend>Categoría</legend>
+        <div id="fCat" class="chips"></div>
+      </fieldset>
+      <fieldset class="grupo">
+        <legend>Subcategoría</legend>
+        <div id="fSub" class="chips"></div>
+      </fieldset>
+    </div>
+    <div class="barra__pie">
+      <p id="conteo" class="conteo" aria-live="polite"></p>
+      <button id="limpiar" class="btn btn--linea" type="button">Quitar filtros</button>
+    </div>
+  </div>
+</div>
+
+<main id="rejilla" class="rejilla" tabindex="-1"></main>
+
+<p id="vacio" class="vacio" hidden>
+  <span>Ninguna referencia coincide con esa búsqueda.</span>
+  <button class="btn" type="button" data-limpiar>Ver todo el catálogo</button>
+</p>
+
+<footer class="pie">
+  <div class="pie__col">
+    <span class="marca__nombre">BÉNÉ</span>
+    <span class="marca__sub">BÉNÉDICTION</span>
+  </div>
+  <div class="pie__col">
+    <p id="pieContacto" class="pie__contacto"></p>
+  </div>
+  <p class="pie__legal" id="pieLegal"></p>
+</footer>
+
+<dialog id="ficha" class="ficha" aria-labelledby="fichaNombre">
+  <button class="ficha__x" type="button" data-cerrar aria-label="Cerrar ficha">Cerrar</button>
+  <div class="ficha__cuerpo">
+    <figure class="ficha__foto"><img id="fichaImg" alt="" width="340" height="340"></figure>
+    <div class="ficha__texto">
+      <p id="fichaRuta" class="ficha__ruta"></p>
+      <h2 id="fichaNombre"></h2>
+      <p id="fichaDesc" class="ficha__desc"></p>
+      <ul id="fichaEtiquetas" class="etiquetas"></ul>
+      <table class="precios"><caption>Presentaciones</caption><tbody id="fichaPrecios"></tbody></table>
+      <a id="fichaWa" class="btn btn--wa" href="#">Pedir por WhatsApp</a>
+      <p id="fichaWaNota" class="ficha__nota" hidden></p>
+    </div>
+  </div>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
