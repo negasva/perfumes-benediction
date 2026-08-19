@@ -23,12 +23,15 @@ def limpia(t):
 rows = []
 for p in json.load(open("tools/products.json")):
     nombre = p["nombre"][0].upper() + p["nombre"][1:]
+    cat, sub = p["cat"], p["sub"]
+    if sub == "Creación propia":          # el PDF le da pagina propia a cada una
+        cat, sub = "Creación propia", ""
     rows.append({
-        "id": slug(f'{p["cat"]}-{p["sub"]}-{nombre}'),
+        "id": slug(f'{cat}-{sub}-{nombre}'),
         "nombre": nombre,
         "desc": limpia(p.get("desc", "")),
-        "categoria": p["cat"],
-        "subcategoria": p["sub"] or (p.get("genero", "") and ""),
+        "categoria": cat,
+        "subcategoria": sub,
         "etiquetas": [x for x in [p.get("genero", "")] if x],
         "precio": precio_key(p),
         "img": p["img"] or "",

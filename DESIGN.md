@@ -17,12 +17,26 @@ Muestreada del PDF rasterizado y de los colores de texto de los objetos de la p�
 | Texto secundario | `#6B4A38` | marrón claro de los títulos (`0.553 0.38 0.318`) |
 | Oliva del logo | `#392E00` | color del logotipo BÉNÉ y de los precios |
 
-Colores que el PDF usa por sección y que **no** subí a la web, para no romper la
-regla de un solo tema: rosa femenino `#FEE0DF` con banda `#EBC2C1` y texto
-`#882523` (páginas 14 a 22), carbón masculino `#101010` con texto blanco
-(páginas 23 a 28), gris `#EAEAE5` con banda `#DBD4CD` (páginas 29 a 39).
-Siguen presentes en la web dentro de las fotos, que conservan el fondo de su
-página original.
+### Un tema por línea
+
+El PDF cambia de paleta en cada sección, y la web hace lo mismo: cada franja del
+catálogo se repinta con los colores de esa sección en el original. Es lo que pidió
+la clienta y es lo que hace que la web se lea como el catálogo.
+
+| Línea | Fondo | Banda | Título | Nombre | Texto |
+|---|---|---|---|---|---|
+| Creación propia | `#F0E4D6` | `#E2D3C0` | `#88594A` | `#6E3413` | `#5F4030` |
+| Perfumes unisex | `#EEE6D6` | `#DED1C1` | `#88594A` | `#7B3F17` | `#5F4030` |
+| Perfumes femeninos | `#FEE0DF` | `#F2CFCE` | `#882523` | `#7E211F` | `#6E3230` |
+| Perfumes masculinos | `#1A1A1A` | `#2B2B2B` | `#FFFFFF` | `#F2E9DC` | `#BDB6AC` |
+| Cremas, splash y sets | `#EAEAE5` | `#DBD4CD` | `#1F1F1F` | `#2B2B2B` | `#4E4E48` |
+
+Los títulos de sección van a `#88594A` y no a `#8D6151`, que es el del PDF: el
+original queda en 4.27:1 sobre el crema, que pasa como texto grande pero no como
+texto normal. `#88594A` es indistinguible a simple vista y llega a 4.73:1.
+
+Fuera de las franjas, la cabecera, el mosaico de líneas y la barra de filtros se
+quedan siempre en el crema base. Son el marco, no el contenido.
 
 ### Contraste medido (WCAG)
 
@@ -77,10 +91,9 @@ producto sí conservan la textura, porque se recortaron rasterizando la página.
 ## 5. Marcas gráficas
 
 - **Filete corto**: en el PDF cada nombre de producto lleva una línea horizontal
-  de un par de milímetros a su izquierda o a su derecha. Es el elemento gráfico
-  que más se repite en todo el catálogo. En la web es la firma: cada tarjeta
-  lleva ese mismo filete antes del nombre, y los títulos de subcategoría lo
-  extienden hasta el borde.
+  a su izquierda o a su derecha. En la web se quitó de las tarjetas, a pedido de
+  la clienta. Sigue vivo en los títulos de subcategoría, donde la línea se
+  extiende hasta el borde de la franja.
 - **Banda detrás del nombre**: rectángulo relleno de `#DED1C1`, sin esquinas
   redondeadas. En la web es el fondo de la caja de foto.
 - **Cero radios**: el PDF no tiene ni una esquina redondeada. La web tampoco:
@@ -89,7 +102,22 @@ producto sí conservan la textura, porque se recortaron rasterizando la página.
   pequeño y muy espaciado. Reconstruido con tipografía, no con imagen, porque en
   el PDF el logo es un objeto imagen y recortarlo daba un PNG con fondo crema.
 
-## 6. Dónde el PDF le gana a las skills
+## 6. Estructura de la página
+
+El mosaico de líneas de la portada sale de una referencia que pasó la clienta:
+tarjetas grandes, una por línea, cada una pintada con su propio color y con el
+número de referencias debajo, y encima pasos numerados. La web lo aplica así:
+
+- **01 Elige la línea**: ocho tarjetas, una por categoría, del tamaño de un
+  bloque. Cada una lleva el fondo de su sección, así que el color ya adelanta
+  a qué franja lleva. El nombre y el conteo van en texto, no solo en color.
+- **02 Afina**: chips de subcategoría, que envuelven en varias filas.
+- **03 Busca**: campo de texto, y debajo el conteo vivo.
+
+Los tres pasos van en la barra pegajosa, que no tapa contenido porque la primera
+franja arranca justo debajo.
+
+## 7. Dónde el PDF le gana a las skills
 
 Tres choques, y en los tres mandó el PDF:
 
@@ -103,5 +131,12 @@ Tres choques, y en los tres mandó el PDF:
 3. **`ui-ux-pro-max` devolvió para "perfume beauty ecommerce" una paleta verde y
    naranja con Rubik y Nunito Sans.** Descartada entera. De esa skill me quedé
    solo con las reglas transversales: contraste 4.5:1, área táctil de 44px,
-   `prefers-reduced-motion`, foco visible, sin emojis como iconos y reserva de
-   alto en las imágenes.
+   `prefers-reduced-motion`, foco visible, sin emojis como iconos, reserva de
+   alto en las imágenes, chips que envuelven en vez de recortarse, barra pegajosa
+   que no tapa la primera sección, y el conteo como mensaje con sentido
+   (`role="status"` con "145 referencias en el catálogo", no un número suelto).
+
+Un cuarto choque, menor: las tarjetas de la referencia llevan un icono pequeño
+sobre el nombre. No los puse. Dibujar iconos SVG a mano está desaconsejado por las
+skills y meter una librería rompería el "sin dependencias". El nombre y el conteo
+en texto ya cumplen la regla de no informar solo por color.

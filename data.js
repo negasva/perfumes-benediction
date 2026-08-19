@@ -5,8 +5,8 @@
 // arriba de app.js (PRECIOS). Ahi se cambian los valores.
 
 const PRODUCTOS = [
-  { id: "perfumes-unisex-creacion-propia-idealle", nombre: "Idealle", desc: "Amaderado Vainilla", categoria: "Perfumes unisex", subcategoria: "Creación propia", etiquetas: [], precio: "perfume", img: "img/idealle.webp" },
-  { id: "perfumes-unisex-creacion-propia-passion-intense", nombre: "Passion Intense", desc: "Afrutado", categoria: "Perfumes unisex", subcategoria: "Creación propia", etiquetas: [], precio: "perfume", img: "img/passion-intense.webp" },
+  { id: "creacion-propia-idealle", nombre: "Idealle", desc: "Amaderado Vainilla", categoria: "Creación propia", subcategoria: "", etiquetas: [], precio: "perfume", img: "img/idealle.webp" },
+  { id: "creacion-propia-passion-intense", nombre: "Passion Intense", desc: "Afrutado", categoria: "Creación propia", subcategoria: "", etiquetas: [], precio: "perfume", img: "img/passion-intense.webp" },
   { id: "perfumes-unisex-addiction", nombre: "Addiction", desc: "Inspirada en Lattafa Emeer", categoria: "Perfumes unisex", subcategoria: "", etiquetas: [], precio: "perfume", img: "img/perfumes-unisex-addiction.webp" },
   { id: "perfumes-unisex-cheval", nombre: "Cheval", desc: "Inspirada en Montale arabians tonka", categoria: "Perfumes unisex", subcategoria: "", etiquetas: [], precio: "perfume", img: "img/perfumes-unisex-cheval.webp" },
   { id: "perfumes-unisex-cosmos", nombre: "Cosmos", desc: "Inspirada en Lattafa Art of universe", categoria: "Perfumes unisex", subcategoria: "", etiquetas: [], precio: "perfume", img: "img/perfumes-unisex-cosmos.webp" },

@@ -36,6 +36,21 @@ const LEGAL = "Precio disponible solo para las referencias seleccionadas. " +
    De aqui para abajo no hace falta tocar nada.
    ===================================================================== */
 
+// Cada linea del catalogo repinta su franja con los colores de esa seccion
+// en el PDF. Los nombres coinciden con los bloques [data-tema] de styles.css.
+const TEMAS = {
+  "Creación propia": "creacion",
+  "Perfumes unisex": "unisex",
+  "Perfumes femeninos": "femeninos",
+  "Perfumes masculinos": "masculinos",
+};
+const tema = (cat) => TEMAS[cat] || "cuidado";
+
+// Orden de las lineas en la portada y en la rejilla.
+const ORDEN = ["Creación propia", "Perfumes unisex", "Perfumes femeninos",
+  "Perfumes masculinos", "Cremas y splash", "Set de descubrimiento",
+  "Béné kids - Línea infantil", "Descuentos o sets especiales"];
+
 const $ = (s, r = document) => r.querySelector(s);
 const norm = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const precioCorto = (k) => (PRECIOS[k] || [])[0]?.[1] || "";
@@ -78,6 +93,24 @@ function filtrar() {
 function cuenta(clave, valor) {
   return PRODUCTOS.filter((p) => p[clave] === valor).length;
 }
+function pintaLineas(cont, valores, set) {
+  cont.replaceChildren(...valores.map((v) => {
+    const n = cuenta("categoria", v);
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "linea";
+    b.dataset.tema = tema(v);
+    b.setAttribute("aria-pressed", String(set.has(v)));
+    b.innerHTML = `<span class="linea__n">${v}</span>` +
+      `<span class="linea__c">${n} ${n === 1 ? "referencia" : "referencias"}</span>`;
+    b.addEventListener("click", () => {
+      set.has(v) ? set.delete(v) : set.add(v);
+      render();
+    });
+    return b;
+  }));
+}
+
 function pintaChips(cont, valores, set, clave) {
   cont.replaceChildren(...valores.map((v) => {
     const b = document.createElement("button");
@@ -116,13 +149,16 @@ function tarjeta(p) {
 
 function render() {
   const lista = filtrar();
-  const cats = [...new Set(PRODUCTOS.map((p) => p.categoria))];
+  const presentes = new Set(PRODUCTOS.map((p) => p.categoria));
+  const cats = ORDEN.filter((c) => presentes.has(c))
+    .concat([...presentes].filter((c) => !ORDEN.includes(c)));
   const subs = [...new Set(PRODUCTOS.map((p) => p.subcategoria).filter(Boolean))];
-  pintaChips($("#fCat"), cats, estado.cats, "categoria");
+  pintaLineas($("#fCat"), cats, estado.cats);
   pintaChips($("#fSub"), subs, estado.subs, "subcategoria");
 
-  $("#conteo").textContent =
-    lista.length === 1 ? "1 referencia" : `${lista.length} referencias`;
+  $("#conteo").textContent = lista.length === 1
+    ? "1 referencia en el catálogo"
+    : `${lista.length} referencias en el catálogo`;
   vacio.hidden = lista.length > 0;
 
   const frag = document.createDocumentFragment();
@@ -131,20 +167,24 @@ function render() {
     if (!enCat.length) continue;
     const sec = document.createElement("section");
     sec.className = "seccion";
-    sec.innerHTML = `<h2 class="seccion__t">${cat}</h2><hr class="seccion__linea">`;
+    sec.dataset.tema = tema(cat);
+    const caja = document.createElement("div");
+    caja.className = "seccion__inner";
+    caja.innerHTML = `<h2 class="seccion__t">${cat}</h2><hr class="seccion__linea">`;
     const grupos = [...new Set(enCat.map((p) => p.subcategoria))];
     for (const sub of grupos) {
       if (sub) {
         const h = document.createElement("h3");
         h.className = "sub__t";
         h.textContent = sub;
-        sec.append(h);
+        caja.append(h);
       }
       const ul = document.createElement("ul");
       ul.className = "tarjetas";
       ul.append(...enCat.filter((p) => p.subcategoria === sub).map(tarjeta));
-      sec.append(ul);
+      caja.append(ul);
     }
+    sec.append(caja);
     frag.append(sec);
   }
   rejilla.replaceChildren(frag);
@@ -154,6 +194,7 @@ function render() {
 /* --- Ficha ------------------------------------------------------------ */
 function abrirFicha(p, origen) {
   ultimoFoco = origen;
+  ficha.dataset.tema = tema(p.categoria);
   $("#fichaImg").src = p.img;
   $("#fichaImg").alt = `Producto Bénédiction ${p.nombre}`;
   $("#fichaRuta").textContent = [p.categoria, p.subcategoria].filter(Boolean).join(" · ");
