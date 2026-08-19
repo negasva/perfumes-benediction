@@ -46,6 +46,26 @@ const TEMAS = {
 };
 const tema = (cat) => TEMAS[cat] || "cuidado";
 
+// Un icono de trazo por linea y por chip, dibujado con el color del texto.
+// La clave es el texto exacto que se muestra; si no esta, no se pinta icono.
+const ICONOS = {
+  "Todos": '<path d="M4 7h16M4 12h16M4 17h16"/>',
+  "Creación propia": '<path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.3 10.1 12.8 4.5 10.9 10.1 9z"/>',
+  "Perfumes unisex": '<circle cx="9" cy="12" r="5.2"/><circle cx="15" cy="12" r="5.2"/>',
+  "Perfumes femeninos": '<circle cx="12" cy="9.6" r="4.6"/><path d="M12 14.2v6.3M9.2 17.7h5.6"/>',
+  "Perfumes masculinos": '<circle cx="10.2" cy="13.8" r="4.6"/><path d="M13.9 10.1 19.5 4.5M15.4 4.5h4.1v4.1"/>',
+  "Cremas y splash": '<path d="M12 3.4c0 0 5.8 6.4 5.8 10.1a5.8 5.8 0 0 1-11.6 0C6.2 9.8 12 3.4 12 3.4z"/>',
+  "Cremas": '<path d="M8 9.5h8v10.5H8zM9.8 9.5V6.4h4.4v3.1M10.4 4h3.2"/>',
+  "Splash": '<path d="M12 3.4c0 0 5.8 6.4 5.8 10.1a5.8 5.8 0 0 1-11.6 0C6.2 9.8 12 3.4 12 3.4z"/>',
+  "Duo crema y splash": '<path d="M3.5 10h6v10h-6zM4.9 10V7.2h3.2V10M14.5 10h6v10h-6zM15.9 10V7.2h3.2V10"/>',
+  "Set de descubrimiento": '<path d="M4.5 9h4v11h-4zM10 9h4v11h-4zM15.5 9h4v11h-4zM5.6 9V6.4h1.8V9M11.1 9V6.4h1.8V9M16.6 9V6.4h1.8V9"/>',
+  "Béné kids - Línea infantil": '<path d="M3.6 19a8.4 8.4 0 0 1 16.8 0M7.1 19a4.9 4.9 0 0 1 9.8 0M10.6 19a1.4 1.4 0 0 1 2.8 0"/>',
+  "Descuentos o sets especiales": '<path d="M3.6 12.6 12.6 3.6h7.8v7.8l-9 9z"/><circle cx="16.6" cy="7.4" r="1.5"/>',
+};
+const icono = (clave) => ICONOS[clave]
+  ? `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICONOS[clave]}</svg>`
+  : "";
+
 // Orden de las lineas en la portada y en la rejilla.
 const ORDEN = ["Creación propia", "Perfumes unisex", "Perfumes femeninos",
   "Perfumes masculinos", "Cremas y splash", "Set de descubrimiento",
@@ -101,8 +121,11 @@ function pintaLineas(cont, valores, set) {
     b.className = "linea";
     b.dataset.tema = tema(v);
     b.setAttribute("aria-pressed", String(set.has(v)));
-    b.innerHTML = `<span class="linea__n">${v}</span>` +
-      `<span class="linea__c">${n} ${n === 1 ? "referencia" : "referencias"}</span>`;
+    b.innerHTML = icono(v) +
+      `<span class="linea__txt">` +
+      `<span class="linea__n">${v}</span>` +
+      `<span class="linea__c">${n} ${n === 1 ? "referencia" : "referencias"}</span>` +
+      `</span>`;
     b.addEventListener("click", () => {
       set.has(v) ? set.delete(v) : set.add(v);
       render();
@@ -111,19 +134,27 @@ function pintaLineas(cont, valores, set) {
   }));
 }
 
+function chip(texto, marcado, n, alPulsar) {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip";
+  b.setAttribute("aria-pressed", String(marcado));
+  b.innerHTML = icono(texto) + `<span class="chip__t">${texto}</span>` +
+    (n == null ? "" : `<span class="chip__n">${n}</span>`);
+  b.addEventListener("click", alPulsar);
+  return b;
+}
+
 function pintaChips(cont, valores, set, clave) {
-  cont.replaceChildren(...valores.map((v) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "chip";
-    b.setAttribute("aria-pressed", String(set.has(v)));
-    b.innerHTML = `${v}<span class="chip__n">${cuenta(clave, v)}</span>`;
-    b.addEventListener("click", () => {
+  const todos = chip("Todos", set.size === 0, PRODUCTOS.length, () => {
+    set.clear();
+    render();
+  });
+  cont.replaceChildren(todos, ...valores.map((v) =>
+    chip(v, set.has(v), cuenta(clave, v), () => {
       set.has(v) ? set.delete(v) : set.add(v);
       render();
-    });
-    return b;
-  }));
+    })));
 }
 
 /* --- Rejilla ---------------------------------------------------------- */
@@ -156,9 +187,9 @@ function render() {
   pintaLineas($("#fCat"), cats, estado.cats);
   pintaChips($("#fSub"), subs, estado.subs, "subcategoria");
 
-  $("#conteo").textContent = lista.length === 1
-    ? "1 referencia en el catálogo"
-    : `${lista.length} referencias en el catálogo`;
+  $("#conteo").innerHTML = `<b>${lista.length}</b> ` +
+    (lista.length === 1 ? "referencia" : "referencias");
+  $("#qx").hidden = !estado.q;
   vacio.hidden = lista.length > 0;
 
   const frag = document.createDocumentFragment();
@@ -241,6 +272,12 @@ ficha.addEventListener("close", () => ultimoFoco?.focus());
 
 /* --- Arranque --------------------------------------------------------- */
 $("#q").addEventListener("input", (e) => { estado.q = e.target.value; render(); });
+$("#qx").addEventListener("click", () => {
+  estado.q = "";
+  $("#q").value = "";
+  render();
+  $("#q").focus();
+});
 $("#limpiar").addEventListener("click", limpiar);
 vacio.querySelector("[data-limpiar]").addEventListener("click", limpiar);
 
