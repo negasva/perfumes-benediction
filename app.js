@@ -6,11 +6,14 @@
 // por ejemplo "573001112233". Si se deja vacio, el boton de WhatsApp queda
 // desactivado en toda la pagina.
 const CONTACTO = {
-  whatsapp: "",     // ej. "573001112233"
+  whatsapp: "573178608303",     // ej. "573001112233"
+  whatsapp2: "573013624187",
   telefono: "",
   correo: "",
   instagram: "",    // ej. "@bene.perfumes"
   sitio: "",
+  direccion: "Cra 80 # 13a-261, CC Aquarela local A11 · junto al Éxito, Cali",
+  horario: "Lunes a sábado, 10:00 a. m. – 7:00 p. m.",
 };
 
 // Precios tomados del catalogo. Cada producto apunta a una de estas listas
@@ -66,10 +69,14 @@ const icono = (clave) => ICONOS[clave]
   ? `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICONOS[clave]}</svg>`
   : "";
 
+// Los tres generos van arriba, en botones grandes. El resto queda debajo en
+// botones pequenos.
+const GENEROS = ["Perfumes unisex", "Perfumes femeninos", "Perfumes masculinos"];
+
 // Orden de las lineas en la portada y en la rejilla.
-const ORDEN = ["Creación propia", "Perfumes unisex", "Perfumes femeninos",
-  "Perfumes masculinos", "Cremas y splash", "Set de descubrimiento",
-  "Béné kids - Línea infantil", "Descuentos o sets especiales"];
+const ORDEN = [...GENEROS, "Creación propia", "Cremas y splash",
+  "Set de descubrimiento", "Béné kids - Línea infantil",
+  "Descuentos o sets especiales"];
 
 const $ = (s, r = document) => r.querySelector(s);
 const norm = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -113,13 +120,15 @@ function filtrar() {
 function cuenta(clave, valor) {
   return PRODUCTOS.filter((p) => p[clave] === valor).length;
 }
-function pintaLineas(cont, valores, set) {
+// Los botones ya no llevan color propio: heredan el tema activo de la pagina,
+// asi que todos se ven iguales. Al pulsar uno, la pagina entera se repinta con
+// el color de esa linea. La seleccion es unica: elegir una suelta la anterior.
+function pintaLineas(cont, valores, set, clase = "") {
   cont.replaceChildren(...valores.map((v) => {
     const n = cuenta("categoria", v);
     const b = document.createElement("button");
     b.type = "button";
-    b.className = "linea";
-    b.dataset.tema = tema(v);
+    b.className = "linea" + (clase ? " " + clase : "");
     b.setAttribute("aria-pressed", String(set.has(v)));
     b.innerHTML = icono(v) +
       `<span class="linea__txt">` +
@@ -127,7 +136,9 @@ function pintaLineas(cont, valores, set) {
       `<span class="linea__c">${n} ${n === 1 ? "referencia" : "referencias"}</span>` +
       `</span>`;
     b.addEventListener("click", () => {
-      set.has(v) ? set.delete(v) : set.add(v);
+      const activo = set.has(v);
+      set.clear();
+      if (!activo) set.add(v);
       render();
     });
     return b;
@@ -157,6 +168,38 @@ function pintaChips(cont, valores, set, clave) {
     })));
 }
 
+/* --- Menu desplegable -------------------------------------------------- */
+// El panel es un <details> nativo: abre y cierra sin JS. Aqui solo se pintan
+// los enlaces (uno por linea) y se aplica el filtro sin recargar.
+function pintaMenu(cats) {
+  const irA = (v) => {
+    estado.cats.clear();
+    if (v) estado.cats.add(v);
+    $("#menu").open = false;
+    render();
+    $("#rejilla").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const enlace = (texto, valor) => {
+    const a = document.createElement("a");
+    a.className = "menu__a";
+    a.href = valor ? "?cat=" + encodeURIComponent(valor) : "?";
+    a.setAttribute("aria-current", String(valor ? estado.cats.has(valor)
+      : estado.cats.size === 0));
+    a.innerHTML = icono(valor || "Todos") + `<span>${texto}</span>`;
+    a.addEventListener("click", (e) => { e.preventDefault(); irA(valor); });
+    return a;
+  };
+  $("#menuNav").replaceChildren(
+    enlace("Ver todo el catálogo", null),
+    ...cats.map((c) => enlace(c, c)));
+}
+
+// Clic fuera: cierra el panel.
+document.addEventListener("click", (e) => {
+  const m = $("#menu");
+  if (m?.open && !m.contains(e.target)) m.open = false;
+});
+
 /* --- Rejilla ---------------------------------------------------------- */
 function tarjeta(p) {
   const li = document.createElement("li");
@@ -184,8 +227,16 @@ function render() {
   const cats = ORDEN.filter((c) => presentes.has(c))
     .concat([...presentes].filter((c) => !ORDEN.includes(c)));
   const subs = [...new Set(PRODUCTOS.map((p) => p.subcategoria).filter(Boolean))];
-  pintaLineas($("#fCat"), cats, estado.cats);
+  pintaLineas($("#fGen"), cats.filter((c) => GENEROS.includes(c)),
+    estado.cats, "linea--gen");
+  pintaLineas($("#fCat"), cats.filter((c) => !GENEROS.includes(c)), estado.cats);
   pintaChips($("#fSub"), subs, estado.subs, "subcategoria");
+  pintaMenu(cats);
+
+  // La linea elegida repinta toda la pagina con sus colores.
+  const activa = [...estado.cats][0];
+  if (activa) document.body.dataset.tema = tema(activa);
+  else document.body.removeAttribute("data-tema");
 
   $("#conteo").innerHTML = `<b>${lista.length}</b> ` +
     (lista.length === 1 ? "referencia" : "referencias");
@@ -293,11 +344,21 @@ function limpiar() {
 $("#portadaPrecio").textContent =
   `Perfume 30 ml ${PRECIOS.perfume[0][1]} · 100 ml ${PRECIOS.perfume[1][1]}`;
 $("#pieLegal").textContent = LEGAL;
-$("#pieContacto").textContent = [
-  CONTACTO.whatsapp && `WhatsApp ${CONTACTO.whatsapp}`,
-  CONTACTO.telefono, CONTACTO.correo, CONTACTO.instagram, CONTACTO.sitio,
-].filter(Boolean).join(" · ") ||
-  "Los datos de contacto no aparecen en el catálogo. Se cargan en app.js.";
+$("#pieDir").textContent = CONTACTO.direccion;
+$("#pieHorario").textContent = CONTACTO.horario;
+
+// Un enlace wa.me por numero; se muestra en formato local para leerlo facil.
+const local = (n) => n.replace(/^57/, "").replace(/(\d{3})(\d{3})(\d{4})/, "$1 $2 $3");
+$("#pieContacto").replaceChildren(...[CONTACTO.whatsapp, CONTACTO.whatsapp2]
+  .filter(Boolean).map((n) => {
+    const a = document.createElement("a");
+    a.className = "pie__wa";
+    a.href = `https://wa.me/${n}`;
+    a.rel = "noopener";
+    a.target = "_blank";
+    a.textContent = `WhatsApp ${local(n)}`;
+    return a;
+  }));
 
 leerURL();
 $("#q").value = estado.q;
