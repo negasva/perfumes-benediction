@@ -25,25 +25,36 @@
     <p class="portada__precio" id="portadaPrecio"></p>
   </div>
   <figure class="portada__foto">
-    <img src="img/idealle.webp" alt="Frasco Bénédiction Idealle de 30 ml" width="340" height="340" fetchpriority="high">
+    <img src="img/idealle.webp" alt="Frasco Bénédiction Idealle de 30 ml" width="420" height="420" fetchpriority="high">
   </figure>
 </section>
 
 <section class="lineas" aria-labelledby="lineasT">
-  <h2 id="lineasT" class="paso"><span class="paso__n">01</span> Elige la línea</h2>
+  <h2 id="lineasT" class="sr">Elige la línea</h2>
   <div id="fCat" class="lineas__grid"></div>
 </section>
 
 <div class="barra" role="search">
   <div class="barra__inner">
-    <fieldset class="grupo">
-      <legend class="paso"><span class="paso__n">02</span> Afina</legend>
+    <div class="grupo" role="group" aria-labelledby="pasoAfina">
+      <div class="grupo__cab">
+        <span class="paso" id="pasoAfina"><span class="paso__n">01</span> Afina</span>
+        <span class="pista">Empieza aquí</span>
+      </div>
       <div id="fSub" class="chips"></div>
-    </fieldset>
-    <label class="campo">
-      <span class="campo__et"><span class="paso__n">03</span> Busca</span>
-      <input id="q" type="search" placeholder="Nombre o perfume en el que se inspira" autocomplete="off" spellcheck="false">
-    </label>
+    </div>
+
+    <div class="campo">
+      <label class="campo__et" for="q"><span class="paso__n">02</span> Busca</label>
+      <span class="buscador">
+        <svg class="buscador__ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+        <input id="q" type="search" placeholder="Nombre o perfume en el que se inspira" autocomplete="off" spellcheck="false">
+        <button id="qx" class="buscador__x" type="button" aria-label="Borrar la búsqueda" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </span>
+    </div>
+
     <div class="barra__pie">
       <p id="conteo" class="conteo" role="status" aria-atomic="true"></p>
       <button id="limpiar" class="btn btn--linea" type="button">Quitar filtros</button>
@@ -72,7 +83,7 @@
 <dialog id="ficha" class="ficha" aria-labelledby="fichaNombre">
   <button class="ficha__x" type="button" data-cerrar aria-label="Cerrar ficha">Cerrar</button>
   <div class="ficha__cuerpo">
-    <figure class="ficha__foto"><img id="fichaImg" alt="" width="340" height="340"></figure>
+    <figure class="ficha__foto"><img id="fichaImg" alt="" width="420" height="420"></figure>
     <div class="ficha__texto">
       <p id="fichaRuta" class="ficha__ruta"></p>
       <h2 id="fichaNombre"></h2>

@@ -108,14 +108,25 @@ El mosaico de líneas de la portada sale de una referencia que pasó la clienta:
 tarjetas grandes, una por línea, cada una pintada con su propio color y con el
 número de referencias debajo, y encima pasos numerados. La web lo aplica así:
 
-- **01 Elige la línea**: ocho tarjetas, una por categoría, del tamaño de un
-  bloque. Cada una lleva el fondo de su sección, así que el color ya adelanta
-  a qué franja lleva. El nombre y el conteo van en texto, no solo en color.
-- **02 Afina**: chips de subcategoría, que envuelven en varias filas.
-- **03 Busca**: campo de texto, y debajo el conteo vivo.
+- **Banda de líneas**: ocho tarjetas, una por categoría, a todo el ancho y sin
+  huecos entre ellas, en filas completas (1, 2 o 4 por fila según el ancho).
+  Cada una lleva el fondo de su sección, así que el color ya adelanta a qué
+  franja lleva, más un icono de trazo, el nombre y el conteo en texto.
+- **01 Afina**: chips de subcategoría en versaleta, con un chip *Todos* que
+  devuelve el catálogo entero.
+- **02 Busca**: campo con lupa y aspa para borrar, y debajo el conteo vivo con
+  el número en acento.
 
-Los tres pasos van en la barra pegajosa, que no tapa contenido porque la primera
+Los dos pasos van en la barra pegajosa, que no tapa contenido porque la primera
 franja arranca justo debajo.
+
+### La foto manda en la tarjeta
+
+Las fotos de producto llegan con el frasco pegado a un lado y mucho aire
+alrededor. Antes de subirlas se recortan al contorno del producto y se centran
+en un lienzo cuadrado, con un 6 % de aire. Como en todas las fotos el frasco
+mide lo mismo de alto, todos los productos quedan a la misma escala en la
+rejilla. La tarjeta ya no lleva relleno: la foto ocupa el cuadro entero.
 
 ## 7. Dónde el PDF le gana a las skills
 
