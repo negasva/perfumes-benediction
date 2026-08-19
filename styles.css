@@ -2,7 +2,7 @@
    Ver DESIGN.md. Un solo acento, un solo radio (0), un solo tema. */
 
 @font-face { font-family: Archivo; src: url(fonts/Archivo.woff2) format('woff2-variations');
-  font-weight: 400 700; font-display: swap; }
+  font-weight: 100 900; font-display: swap; }
 @font-face { font-family: Poppins; src: url(fonts/Poppins-Light.woff2) format('woff2');
   font-weight: 300; font-display: swap; }
 @font-face { font-family: Poppins; src: url(fonts/Poppins-Regular.woff2) format('woff2');
@@ -31,7 +31,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 img { max-width: 100%; height: auto; display: block; }
-h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 700;
+h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 800;
   letter-spacing: -.02em; line-height: 1.02; margin: 0; }
 :where(a) { color: var(--acento); }
 
@@ -45,10 +45,10 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 .marca { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
   max-width: var(--ancho); margin: 0 auto; padding: 1.5rem var(--paso) 1rem; }
 .marca__id { display: flex; flex-direction: column; }
-.marca__nombre { font-family: Archivo, sans-serif; font-weight: 700; font-size: 1.9rem;
+.marca__nombre { font-family: Archivo, sans-serif; font-weight: 800; font-size: 1.9rem;
   letter-spacing: .1em; color: var(--oliva); line-height: 1; }
 .marca__sub { font-size: .62rem; letter-spacing: .42em; color: var(--suave); }
-.marca__lema { margin: 0; font-family: Archivo, sans-serif; font-weight: 700;
+.marca__lema { margin: 0; font-family: Archivo, sans-serif; font-weight: 800;
   font-size: 1.35rem; color: var(--acento); }
 
 /* Portada ---------------------------------------------------------------- */
@@ -98,70 +98,133 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 .btn:hover { filter: brightness(1.12); }
 .btn:active { transform: translateY(1px); }
 .btn--linea { background: transparent; color: var(--acento); }
-.btn--wa { width: 100%; margin-top: 1rem; }
-.btn[aria-disabled="true"] { background: var(--filete); border-color: #C9B79F;
-  color: #6B4A38; cursor: not-allowed; filter: none; }
+.btn--wa { width: 100%; margin-top: 1rem; background: var(--tema-nombre);
+  border-color: var(--tema-nombre); color: var(--tema-fondo); }
+.btn[aria-disabled="true"] { background: var(--tema-banda); border-color: var(--tema-borde);
+  color: var(--tema-texto); cursor: not-allowed; filter: none; }
+
+
+/* Temas por linea. Cada seccion del catalogo repinta su franja con los colores
+   de su seccion en el PDF: crema en unisex, rosa en femeninos, carbon en
+   masculinos, gris en cuidado y sets. */
+:root, [data-tema="unisex"] {
+  --tema-fondo: #EEE6D6; --tema-banda: #DED1C1; --tema-titulo: #88594A;
+  --tema-nombre: #7B3F17; --tema-texto: #5F4030; --tema-borde: #C9B79F;
+}
+[data-tema="creacion"] {
+  --tema-fondo: #F0E4D6; --tema-banda: #E2D3C0; --tema-titulo: #88594A;
+  --tema-nombre: #6E3413; --tema-texto: #5F4030; --tema-borde: #CBB49B;
+}
+[data-tema="femeninos"] {
+  --tema-fondo: #FEE0DF; --tema-banda: #F2CFCE; --tema-titulo: #882523;
+  --tema-nombre: #7E211F; --tema-texto: #6E3230; --tema-borde: #E0B4B3;
+}
+[data-tema="masculinos"] {
+  --tema-fondo: #1A1A1A; --tema-banda: #2B2B2B; --tema-titulo: #FFFFFF;
+  --tema-nombre: #F2E9DC; --tema-texto: #BDB6AC; --tema-borde: #4A4A4A;
+}
+[data-tema="cuidado"] {
+  --tema-fondo: #EAEAE5; --tema-banda: #DBD4CD; --tema-titulo: #1F1F1F;
+  --tema-nombre: #2B2B2B; --tema-texto: #4E4E48; --tema-borde: #C4BEB6;
+}
+
+/* Elige la linea ---------------------------------------------------------- */
+.paso { font-family: Archivo, sans-serif; font-weight: 800; font-size: .95rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--tinta);
+  display: flex; align-items: center; gap: .6rem; margin: 0 0 .9rem; padding: 0; }
+.paso__n { font-family: Archivo, sans-serif; font-weight: 800; font-size: .78rem;
+  letter-spacing: .06em; color: var(--acento); border: 1px solid var(--acento);
+  padding: .15rem .38rem; }
+
+.lineas { max-width: var(--ancho); margin: 0 auto; padding: 0 var(--paso) 2rem; }
+.lineas__grid { display: grid; gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 252px), 1fr)); }
+
+.linea { position: relative; text-align: left; font: inherit; cursor: pointer;
+  border: 0; border-radius: var(--radio); padding: 1.4rem 1.2rem 1.2rem;
+  min-height: 122px; display: flex; flex-direction: column; justify-content: flex-end;
+  background: var(--tema-fondo); color: var(--tema-texto);
+  box-shadow: inset 0 0 0 1px var(--tema-borde);
+  transition: box-shadow .18s ease, transform .18s ease; }
+.linea:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 2px var(--tema-nombre); }
+.linea__n { font-family: Archivo, sans-serif; font-weight: 800;
+  font-size: clamp(1rem, 1.6vw, 1.28rem); line-height: 1.08;
+  letter-spacing: .01em; text-transform: uppercase; color: var(--tema-titulo);
+  overflow-wrap: break-word; }
+.linea__c { font-size: .82rem; letter-spacing: .06em; margin-top: .35rem;
+  font-variant-numeric: tabular-nums; }
+.linea[aria-pressed="true"] { box-shadow: inset 0 0 0 3px var(--tema-nombre); }
+.linea[aria-pressed="true"] .linea__c::before { content: "Elegida. "; font-weight: 500;
+  color: var(--tema-nombre); }
+
+/* Franja de seccion ------------------------------------------------------- */
+.seccion { background: var(--tema-fondo); padding: clamp(2.2rem, 5vw, 3.6rem) var(--paso);
+  margin: 0 calc(50% - 50vw); }
+.seccion + .seccion { margin-top: 0; }
+.seccion__inner { max-width: var(--ancho); margin: 0 auto; }
 
 /* Rejilla ---------------------------------------------------------------- */
-.rejilla { max-width: var(--ancho); margin: 0 auto; padding: 2rem var(--paso) 3rem; }
+.rejilla { padding: 0; overflow-x: clip; }
 .rejilla:focus { outline: none; }
-.seccion + .seccion { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
-.seccion__t { font-size: clamp(1.6rem, 3.4vw, 2.6rem); color: var(--acento); }
-.seccion__linea { border: 0; border-top: var(--linea); margin: .6rem 0 1.6rem; }
-.sub__t { font-family: Archivo, sans-serif; font-weight: 700; font-size: 1rem;
-  letter-spacing: .16em; text-transform: uppercase; color: var(--suave);
+
+.seccion__t { font-size: clamp(2rem, 5vw, 3.6rem); color: var(--tema-titulo);
+  max-width: 14ch; }
+.seccion__linea { border: 0; border-top: 1px solid var(--tema-borde); margin: .6rem 0 1.8rem; }
+.sub__t { font-family: Archivo, sans-serif; font-weight: 800; font-size: 1rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--tema-texto);
   margin: 2rem 0 1rem; display: flex; align-items: center; gap: .8rem; }
-.sub__t::after { content: ""; flex: 1; border-top: var(--linea); }
+.sub__t::after { content: ""; flex: 1; border-top: 1px solid var(--tema-borde); }
 
 .tarjetas { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); }
 
 .tarjeta { display: flex; flex-direction: column; width: 100%; text-align: left;
-  font: inherit; color: inherit; cursor: pointer; background: transparent;
-  border: var(--linea); border-radius: var(--radio); padding: 0; overflow: hidden;
+  font: inherit; color: var(--tema-texto); cursor: pointer; background: transparent;
+  border: 1px solid var(--tema-borde); border-radius: var(--radio); padding: 0; overflow: hidden;
   transition: border-color .18s ease, transform .18s ease; }
-.tarjeta:hover { border-color: var(--acento); transform: translateY(-2px); }
-.tarjeta__foto { background: var(--filete); aspect-ratio: 1 / 1; display: grid;
+.tarjeta:hover { border-color: var(--tema-nombre); transform: translateY(-2px); }
+.tarjeta__foto { background: var(--tema-banda); aspect-ratio: 1 / 1; display: grid;
   place-items: center; padding: .6rem; overflow: hidden; }
 .tarjeta__foto img { width: 100%; height: 100%; object-fit: contain; }
 .tarjeta__texto { padding: .85rem .9rem 1rem; display: grid; gap: .3rem; }
-/* el filete corto al lado del nombre es la marca grafica del PDF */
-.tarjeta__n { font-family: Archivo, sans-serif; font-weight: 700; font-size: 1.12rem;
-  color: var(--acento); display: flex; align-items: center; gap: .55rem; }
-.tarjeta__n::before { content: ""; width: 18px; border-top: 2px solid var(--acento); flex: none; }
-.tarjeta__d { margin: 0; font-size: .875rem; color: var(--suave); }
+.tarjeta__n { font-family: Archivo, sans-serif; font-weight: 800; font-size: 1.12rem;
+  color: var(--tema-nombre); }
+.tarjeta__d { margin: 0; font-size: .875rem; color: var(--tema-texto); }
 .tarjeta__p { margin: 0; font-size: .875rem; font-weight: 500; }
 
 .vacio { max-width: var(--ancho); margin: 0 auto; padding: 3rem var(--paso) 4rem;
   display: grid; gap: 1rem; justify-items: start; }
 
 /* Ficha ------------------------------------------------------------------ */
-.ficha { border: var(--linea); border-radius: var(--radio); background: var(--papel);
-  color: var(--tinta); padding: 0; width: min(880px, calc(100vw - 2rem));
+.ficha { border: 1px solid var(--tema-borde); border-radius: var(--radio);
+  background: var(--tema-fondo); color: var(--tema-texto); padding: 0; width: min(880px, calc(100vw - 2rem));
   max-height: min(90dvh, 900px); overflow: auto; display: flex; flex-direction: column; }
 .ficha::backdrop { background: rgb(35 20 8 / .58); }
 .ficha__x { position: sticky; top: .6rem; align-self: flex-end; margin: 0 .6rem -2.9rem;
   z-index: 1; font: inherit; font-size: .85rem;
-  cursor: pointer; background: var(--papel); color: var(--acento); border: var(--linea);
+  cursor: pointer; background: var(--tema-fondo); color: var(--tema-nombre);
+  border: 1px solid var(--tema-borde);
   border-radius: var(--radio); min-height: 44px; padding: .5rem .9rem; }
 .ficha__cuerpo { display: grid; gap: clamp(1rem, 3vw, 2rem); padding: clamp(1.25rem, 3vw, 2rem);
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
-.ficha__foto { margin: 0; background: var(--filete); padding: 1rem; display: grid; place-items: center; }
+.ficha__foto { margin: 0; background: var(--tema-banda); padding: 1rem; display: grid; place-items: center; }
 .ficha__foto img { max-height: 340px; width: auto; }
 .ficha__ruta { margin: 0 0 .4rem; font-size: .72rem; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--suave); }
-.ficha h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--acento); }
-.ficha__desc { margin: .6rem 0 0; color: var(--suave); }
-.ficha__nota { margin: .5rem 0 0; font-size: .85rem; color: var(--suave); }
+  text-transform: uppercase; color: var(--tema-texto); }
+.ficha h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--tema-titulo); }
+.ficha__desc { margin: .6rem 0 0; color: var(--tema-texto); }
+.ficha__nota { margin: .5rem 0 0; font-size: .85rem; color: var(--tema-texto); }
 
 .etiquetas { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; margin: .9rem 0 0; padding: 0; }
 .etiquetas li { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
-  border: var(--linea); border-radius: var(--radio); padding: .3rem .6rem; color: var(--suave); }
+  border: 1px solid var(--tema-borde); border-radius: var(--radio); padding: .3rem .6rem;
+  color: var(--tema-texto); }
 
 .precios { width: 100%; border-collapse: collapse; margin-top: 1.2rem; text-align: left; }
 .precios caption { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase;
-  color: var(--suave); text-align: left; padding-bottom: .4rem; }
-.precios th, .precios td { padding: .55rem 0; border-top: var(--linea); font-weight: 400; }
+  color: var(--tema-texto); text-align: left; padding-bottom: .4rem; }
+.precios th, .precios td { padding: .55rem 0; border-top: 1px solid var(--tema-borde);
+  font-weight: 400; color: var(--tema-nombre); }
 .precios td { text-align: right; font-weight: 500; font-variant-numeric: tabular-nums; }
 
 /* Pie -------------------------------------------------------------------- */

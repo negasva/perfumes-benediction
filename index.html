@@ -29,24 +29,23 @@
   </figure>
 </section>
 
+<section class="lineas" aria-labelledby="lineasT">
+  <h2 id="lineasT" class="paso"><span class="paso__n">01</span> Elige la línea</h2>
+  <div id="fCat" class="lineas__grid"></div>
+</section>
+
 <div class="barra" role="search">
   <div class="barra__inner">
+    <fieldset class="grupo">
+      <legend class="paso"><span class="paso__n">02</span> Afina</legend>
+      <div id="fSub" class="chips"></div>
+    </fieldset>
     <label class="campo">
-      <span class="campo__et">Buscar</span>
-      <input id="q" type="search" placeholder="Nombre o inspiración" autocomplete="off" spellcheck="false">
+      <span class="campo__et"><span class="paso__n">03</span> Busca</span>
+      <input id="q" type="search" placeholder="Nombre o perfume en el que se inspira" autocomplete="off" spellcheck="false">
     </label>
-    <div class="filtros">
-      <fieldset class="grupo">
-        <legend>Categoría</legend>
-        <div id="fCat" class="chips"></div>
-      </fieldset>
-      <fieldset class="grupo">
-        <legend>Subcategoría</legend>
-        <div id="fSub" class="chips"></div>
-      </fieldset>
-    </div>
     <div class="barra__pie">
-      <p id="conteo" class="conteo" aria-live="polite"></p>
+      <p id="conteo" class="conteo" role="status" aria-atomic="true"></p>
       <button id="limpiar" class="btn btn--linea" type="button">Quitar filtros</button>
     </div>
   </div>
