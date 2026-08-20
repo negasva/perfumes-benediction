@@ -70,7 +70,8 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 
 /* Marca ------------------------------------------------------------------ */
 .marca { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
-  max-width: var(--ancho); margin: 0 auto; padding: 1.5rem var(--paso) 1rem; }
+  max-width: var(--ancho); margin: 0 auto; padding: 1.1rem var(--paso);
+  border-bottom: var(--linea); }
 .marca__id { display: flex; flex-direction: column; }
 .marca__nombre { font-family: Archivo, sans-serif; font-weight: 800; font-size: 1.25rem;
   letter-spacing: .1em; color: var(--oliva); line-height: 1; }
@@ -103,7 +104,7 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 
 /* Portada ---------------------------------------------------------------- */
 .portada { position: relative; max-width: var(--ancho); margin: 0 auto;
-  padding: max(20vh, 6rem) var(--paso) 3rem; display: grid; align-items: end;
+  padding: clamp(2.5rem, 7vh, 4.5rem) var(--paso) 2.5rem; display: grid; align-items: center;
   grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: var(--paso); }
 .portada__texto { grid-column: 1; }
 .portada h1 { font-size: clamp(2.5rem, 6.5vw, 4.75rem); line-height: 1.02;
@@ -119,9 +120,8 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 
 @media (min-width: 820px) {
   .portada__texto { grid-column: 1 / -1; max-width: 64%; }
-  .portada__foto { position: absolute; right: 0; bottom: 0; width: min(46vw, 640px);
-    margin-right: calc(50% - 50vw); }
-  .portada__foto img { width: 118%; }
+  .portada__foto { position: absolute; right: calc(var(--paso) - 7.6rem); bottom: 0;
+    width: min(34vw, 420px); }
 }
 @media (max-width: 819px) {
   .portada { grid-template-columns: 1fr; padding-top: 2rem; }
@@ -235,27 +235,27 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 .linea { position: relative; text-align: left; font: inherit; cursor: pointer;
   border: 1px solid var(--tema-borde); border-radius: 16px; overflow: hidden;
   transition: box-shadow .18s ease, transform .18s ease;
-  padding: clamp(1.1rem, 2vw, 1.6rem) clamp(1.1rem, 2vw, 1.5rem);
-  min-height: clamp(108px, 12vw, 168px);
-  display: flex; flex-direction: column; justify-content: space-between; gap: 1.1rem;
+  padding: clamp(.8rem, 1.3vw, 1.05rem) clamp(.9rem, 1.5vw, 1.15rem);
+  min-height: clamp(84px, 7.5vw, 110px);
+  display: flex; flex-direction: column; justify-content: space-between; gap: .6rem;
   background: var(--tema-banda); color: var(--tema-texto);
   box-shadow: inset -1px 0 0 var(--tema-borde);
   transition: box-shadow .18s ease, filter .18s ease,
     background-color .3s ease, color .3s ease; }
 
-.linea--gen { min-height: clamp(150px, 19vw, 250px); gap: 1.4rem;
+.linea--gen { min-height: clamp(96px, 9vw, 132px); gap: .7rem;
   padding: clamp(1.4rem, 2.6vw, 2.2rem) clamp(1.3rem, 2.4vw, 2rem); }
-.linea--gen .ico { width: 1.9rem; height: 1.9rem; }
-.linea--gen .linea__n { font-size: clamp(1.3rem, 2.6vw, 2.15rem); letter-spacing: .02em; }
-.linea--gen .linea__c { font-size: .85rem; }
+.linea--gen .ico { width: 1.25rem; height: 1.25rem; }
+.linea--gen .linea__n { font-size: clamp(1rem, 1.7vw, 1.4rem); letter-spacing: .02em; }
+.linea--gen .linea__c { font-size: .72rem; }
 .linea:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -16px var(--tinta); }
-.linea .ico { width: 1.35rem; height: 1.35rem; color: var(--tema-titulo); opacity: .85; }
+.linea .ico { width: 1.05rem; height: 1.05rem; color: var(--tema-titulo); opacity: .85; }
 .linea__txt { display: block; }
 .linea__n { display: block; font-family: Archivo, sans-serif; font-weight: 800;
   font-size: clamp(1rem, 1.45vw, 1.25rem); line-height: 1.1;
   letter-spacing: .04em; text-transform: uppercase; color: var(--tema-titulo);
   overflow-wrap: normal; hyphens: none; }
-.linea__c { display: block; margin-top: .45rem; font-size: .78rem; letter-spacing: .14em;
+.linea__c { display: block; margin-top: .3rem; font-size: .68rem; letter-spacing: .14em;
   text-transform: uppercase; font-variant-numeric: tabular-nums; }
 .linea[aria-pressed="true"] { border-color: var(--tema-nombre);
   box-shadow: inset 0 0 0 1px var(--tema-nombre); }
