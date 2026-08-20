@@ -122,3 +122,20 @@ python3 tools/build_data.py   # reescribe data.js
 `tools/extract.py` sobrescribe `img/` y `tools/products.json`.
 `tools/build_data.py` sobrescribe `data.js`, así que si editaste productos a mano,
 haz una copia antes.
+
+## Cambiar las fotos por las de los frascos originales
+
+Las fichas muestran el frasco del perfume en el que está inspirada cada
+fragancia. Esas fotos salen de una carpeta de recortes numerados (WebP con
+fondo transparente):
+
+```bash
+python3 tools/fotos_nuevas.py CARPETA_DE_RECORTES
+```
+
+Dentro de `tools/fotos_nuevas.py`, el diccionario `MAPA` dice qué recorte le
+toca a cada producto: a la izquierda el `id` del producto, a la derecha el
+número del archivo. Para cambiar una foto, cambia el número. Para agregar una,
+escribe una línea nueva. Los productos que no están en `MAPA` conservan la foto
+que ya tienen: son la creación propia, las cremas, los splash, los sets, y las
+fragancias cuyo frasco original no estaba entre los recortes.
