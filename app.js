@@ -49,18 +49,14 @@ const TEMAS = {
 };
 const tema = (cat) => TEMAS[cat] || "cuidado";
 
-// Un icono de trazo por linea y por chip, dibujado con el color del texto.
-// La clave es el texto exacto que se muestra; si no esta, no se pinta icono.
+// Un icono de trazo por linea, dibujado con el color del texto. La clave es
+// el nombre exacto de la categoria; si no esta, no se pinta icono.
 const ICONOS = {
-  "Todos": '<path d="M4 7h16M4 12h16M4 17h16"/>',
   "Creación propia": '<path d="M12 3.5 13.9 9l5.6 1.9-5.6 1.9L12 18.3 10.1 12.8 4.5 10.9 10.1 9z"/>',
   "Perfumes unisex": '<circle cx="9" cy="12" r="5.2"/><circle cx="15" cy="12" r="5.2"/>',
   "Perfumes femeninos": '<circle cx="12" cy="9.6" r="4.6"/><path d="M12 14.2v6.3M9.2 17.7h5.6"/>',
   "Perfumes masculinos": '<circle cx="10.2" cy="13.8" r="4.6"/><path d="M13.9 10.1 19.5 4.5M15.4 4.5h4.1v4.1"/>',
   "Cremas y splash": '<path d="M12 3.4c0 0 5.8 6.4 5.8 10.1a5.8 5.8 0 0 1-11.6 0C6.2 9.8 12 3.4 12 3.4z"/>',
-  "Cremas": '<path d="M8 9.5h8v10.5H8zM9.8 9.5V6.4h4.4v3.1M10.4 4h3.2"/>',
-  "Splash": '<path d="M12 3.4c0 0 5.8 6.4 5.8 10.1a5.8 5.8 0 0 1-11.6 0C6.2 9.8 12 3.4 12 3.4z"/>',
-  "Duo crema y splash": '<path d="M3.5 10h6v10h-6zM4.9 10V7.2h3.2V10M14.5 10h6v10h-6zM15.9 10V7.2h3.2V10"/>',
   "Set de descubrimiento": '<path d="M4.5 9h4v11h-4zM10 9h4v11h-4zM15.5 9h4v11h-4zM5.6 9V6.4h1.8V9M11.1 9V6.4h1.8V9M16.6 9V6.4h1.8V9"/>',
   "Béné kids - Línea infantil": '<path d="M3.6 19a8.4 8.4 0 0 1 16.8 0M7.1 19a4.9 4.9 0 0 1 9.8 0M10.6 19a1.4 1.4 0 0 1 2.8 0"/>',
   "Descuentos o sets especiales": '<path d="M3.6 12.6 12.6 3.6h7.8v7.8l-9 9z"/><circle cx="16.6" cy="7.4" r="1.5"/>',
@@ -82,7 +78,7 @@ const $ = (s, r = document) => r.querySelector(s);
 const norm = (s) => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const precioCorto = (k) => (PRECIOS[k] || [])[0]?.[1] || "";
 
-const estado = { q: "", cats: new Set(), subs: new Set() };
+const estado = { q: "", cats: new Set() };
 
 const rejilla = $("#rejilla");
 // Al elegir una linea la pagina baja al catalogo.
@@ -96,13 +92,11 @@ function leerURL() {
   const p = new URLSearchParams(location.search);
   estado.q = p.get("q") || "";
   estado.cats = new Set((p.get("cat") || "").split("|").filter(Boolean));
-  estado.subs = new Set((p.get("sub") || "").split("|").filter(Boolean));
 }
 function escribirURL() {
   const p = new URLSearchParams();
   if (estado.q) p.set("q", estado.q);
   if (estado.cats.size) p.set("cat", [...estado.cats].join("|"));
-  if (estado.subs.size) p.set("sub", [...estado.subs].join("|"));
   const s = p.toString();
   history.replaceState(null, "", s ? "?" + s : location.pathname);
 }
@@ -112,7 +106,6 @@ function filtrar() {
   const q = norm(estado.q);
   return PRODUCTOS.filter((p) => {
     if (estado.cats.size && !estado.cats.has(p.categoria)) return false;
-    if (estado.subs.size && !estado.subs.has(p.subcategoria)) return false;
     if (!q) return true;
     return norm(p.nombre + " " + p.desc).includes(q);
   });
@@ -146,29 +139,6 @@ function pintaLineas(cont, valores, set, clase = "") {
     });
     return b;
   }));
-}
-
-function chip(texto, marcado, n, alPulsar) {
-  const b = document.createElement("button");
-  b.type = "button";
-  b.className = "chip";
-  b.setAttribute("aria-pressed", String(marcado));
-  b.innerHTML = icono(texto) + `<span class="chip__t">${texto}</span>` +
-    (n == null ? "" : `<span class="chip__n">${n}</span>`);
-  b.addEventListener("click", alPulsar);
-  return b;
-}
-
-function pintaChips(cont, valores, set, clave) {
-  const todos = chip("Todos", set.size === 0, PRODUCTOS.length, () => {
-    set.clear();
-    render();
-  });
-  cont.replaceChildren(todos, ...valores.map((v) =>
-    chip(v, set.has(v), cuenta(clave, v), () => {
-      set.has(v) ? set.delete(v) : set.add(v);
-      render();
-    })));
 }
 
 /* --- Menu desplegable -------------------------------------------------- */
@@ -229,11 +199,9 @@ function render() {
   const presentes = new Set(PRODUCTOS.map((p) => p.categoria));
   const cats = ORDEN.filter((c) => presentes.has(c))
     .concat([...presentes].filter((c) => !ORDEN.includes(c)));
-  const subs = [...new Set(PRODUCTOS.map((p) => p.subcategoria).filter(Boolean))];
   pintaLineas($("#fGen"), cats.filter((c) => GENEROS.includes(c)),
     estado.cats, "linea--gen");
   pintaLineas($("#fCat"), cats.filter((c) => !GENEROS.includes(c)), estado.cats);
-  pintaChips($("#fSub"), subs, estado.subs, "subcategoria");
   pintaMenu(cats);
 
   // La linea elegida repinta toda la pagina con sus colores.
@@ -338,7 +306,6 @@ vacio.querySelector("[data-limpiar]").addEventListener("click", limpiar);
 function limpiar() {
   estado.q = "";
   estado.cats.clear();
-  estado.subs.clear();
   $("#q").value = "";
   render();
   $("#q").focus();
