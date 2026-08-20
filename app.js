@@ -85,6 +85,8 @@ const precioCorto = (k) => (PRECIOS[k] || [])[0]?.[1] || "";
 const estado = { q: "", cats: new Set(), subs: new Set() };
 
 const rejilla = $("#rejilla");
+// Al elegir una linea la pagina baja al catalogo.
+const irAlCatalogo = () => rejilla.scrollIntoView({ behavior: "smooth", block: "start" });
 const vacio = $("#vacio");
 const ficha = $("#ficha");
 let ultimoFoco = null;
@@ -140,6 +142,7 @@ function pintaLineas(cont, valores, set, clase = "") {
       set.clear();
       if (!activo) set.add(v);
       render();
+      if (!activo) irAlCatalogo();
     });
     return b;
   }));
@@ -177,7 +180,7 @@ function pintaMenu(cats) {
     if (v) estado.cats.add(v);
     $("#menu").open = false;
     render();
-    $("#rejilla").scrollIntoView({ behavior: "smooth", block: "start" });
+    irAlCatalogo();
   };
   const enlace = (texto, valor) => {
     const a = document.createElement("a");
