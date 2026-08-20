@@ -15,7 +15,13 @@
     <span class="marca__nombre">BÉNÉ</span>
     <span class="marca__sub">BÉNÉDICTION</span>
   </div>
-  <p class="marca__lema">Catálogo</p>
+  <details class="menu" id="menu">
+    <summary class="menu__btn">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <span>Menú</span>
+    </summary>
+    <nav class="menu__panel" id="menuNav" aria-label="Líneas del catálogo"></nav>
+  </details>
 </header>
 
 <section class="portada">
@@ -31,6 +37,7 @@
 
 <section class="lineas" aria-labelledby="lineasT">
   <h2 id="lineasT" class="sr">Elige la línea</h2>
+  <div id="fGen" class="lineas__gen"></div>
   <div id="fCat" class="lineas__grid"></div>
 </section>
 
@@ -75,6 +82,13 @@
     <span class="marca__sub">BÉNÉDICTION</span>
   </div>
   <div class="pie__col">
+    <h2 class="pie__t">Nuestra ubicación</h2>
+    <p id="pieDir" class="pie__dato"></p>
+    <h2 class="pie__t">Nuestros horarios</h2>
+    <p id="pieHorario" class="pie__dato"></p>
+  </div>
+  <div class="pie__col">
+    <h2 class="pie__t">Escríbenos</h2>
     <p id="pieContacto" class="pie__contacto"></p>
   </div>
   <p class="pie__legal" id="pieLegal"></p>
