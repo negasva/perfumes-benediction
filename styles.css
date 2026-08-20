@@ -72,9 +72,9 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 .marca { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
   max-width: var(--ancho); margin: 0 auto; padding: 1.5rem var(--paso) 1rem; }
 .marca__id { display: flex; flex-direction: column; }
-.marca__nombre { font-family: Archivo, sans-serif; font-weight: 800; font-size: 1.9rem;
+.marca__nombre { font-family: Archivo, sans-serif; font-weight: 800; font-size: 1.25rem;
   letter-spacing: .1em; color: var(--oliva); line-height: 1; }
-.marca__sub { font-size: .62rem; letter-spacing: .42em; color: var(--suave); }
+.marca__sub { font-size: .55rem; letter-spacing: .42em; color: var(--suave); }
 .marca__lema { margin: 0; font-family: Archivo, sans-serif; font-weight: 800;
   font-size: 1.35rem; color: var(--acento); }
 
@@ -102,16 +102,34 @@ h1, h2, h3 { font-family: Archivo, Poppins, system-ui, sans-serif; font-weight: 
 .menu__a[aria-current="true"] { background: var(--acento); color: var(--papel); }
 
 /* Portada ---------------------------------------------------------------- */
-.portada { max-width: var(--ancho); margin: 0 auto; padding: 1rem var(--paso) 2.5rem;
-  display: grid; gap: clamp(1rem, 3vw, 2.5rem); align-items: end;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
-.portada h1 { font-size: clamp(2.6rem, 7.5vw, 5.25rem); color: var(--acento); max-width: 12ch; }
-.portada__bajada { max-width: 42ch; color: var(--suave); margin: 1rem 0 0; }
-.portada__bajada b { font-weight: 500; color: var(--tinta); }
-.portada__precio { margin: .75rem 0 0; font-weight: 500; color: var(--tinta); }
-.portada__foto { margin: 0; background: var(--filete); padding: clamp(.6rem, 1.4vw, 1.1rem);
-  display: grid; place-items: center; }
-.portada__foto img { margin-inline: auto; width: 100%; max-width: 420px; height: auto; }
+.portada { position: relative; max-width: var(--ancho); margin: 0 auto;
+  padding: max(20vh, 6rem) var(--paso) 3rem; display: grid; align-items: end;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: var(--paso); }
+.portada__texto { grid-column: 1; }
+.portada h1 { font-size: clamp(2.5rem, 6.5vw, 4.75rem); line-height: 1.02;
+  color: var(--tinta); margin: 0; }
+.portada__bajada { max-width: 44ch; color: var(--suave); margin: 1.25rem 0 0; }
+.portada__cta { margin-top: 1.75rem; min-height: 44px; display: inline-flex;
+  align-items: center; background: var(--acento); color: var(--papel);
+  border: 1px solid var(--acento); text-decoration: none; }
+.portada__foto { margin: 0; grid-column: 2; align-self: end; }
+.portada__foto img { display: block; width: 100%; height: auto;
+  /* la foto trae fondo blanco: multiply lo funde con el crema sin recortarla */
+  mix-blend-mode: multiply; }
+
+@media (min-width: 820px) {
+  .portada__texto { grid-column: 1 / -1; max-width: 64%; }
+  .portada__foto { position: absolute; right: 0; bottom: 0; width: min(46vw, 640px);
+    margin-right: calc(50% - 50vw); }
+  .portada__foto img { width: 118%; }
+}
+@media (max-width: 819px) {
+  .portada { grid-template-columns: 1fr; padding-top: 2rem; }
+  .portada__texto { grid-column: 1; grid-row: 2; }
+  .portada__foto { grid-column: 1; grid-row: 1; justify-self: center;
+    width: min(70vw, 300px); }
+  .portada h1 { font-size: clamp(2.25rem, 9vw, 2.5rem); }
+}
 
 /* Barra de filtros ------------------------------------------------------- */
 .barra { position: sticky; top: 0; z-index: 10; background: var(--papel);

@@ -311,8 +311,6 @@ function limpiar() {
   $("#q").focus();
 }
 
-$("#portadaPrecio").textContent =
-  `Perfume 30 ml ${PRECIOS.perfume[0][1]} · 100 ml ${PRECIOS.perfume[1][1]}`;
 $("#pieLegal").textContent = LEGAL;
 $("#pieDir").textContent = CONTACTO.direccion;
 $("#pieHorario").textContent = CONTACTO.horario;
